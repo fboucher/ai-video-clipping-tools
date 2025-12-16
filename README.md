@@ -72,6 +72,10 @@ After saving the workflow, activate it to start monitoring the YouTube channel f
 
 If you have any questions or run into issues, feel free to open an issue. You can also join the [Reka Community Discord](https://link.reka.ai/discord) for support and discussions.
 
+## Documentation
+
+Documentation for Reka Clips API can be found here: [Clip Generation API (Reka Clip](https://docs.reka.ai/vision/highlight-reel-generation)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -4,32 +4,49 @@
 
 Each times there a new video on a specific YouTube channel, create a short clip from it using AI.
 
-This is composed of 2 **n8n** flows:
+## Single Workflows - Looping
 
-1. **Submit Reel Creation**: This flow is triggered when a new video is published on a specific YouTube channel. It sends the video URL to Reka Clips API to create a short clip from the video.
+This is composed of a single **n8n** workflows that gets trigger by new video publish. It then create a clipping job and wait until done. Once the clip is ready, it sends an email with all the clip info.
+
+![single n8n workflow](assets/auto-clip-Loop-http.png)
+
+### Installation
+
+1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the `auto ai clip with http.json` file located in the `n8n` folder.
+  ![import file](assets/import-file.png)
+1. Follow the instructions in the workflows to configure the nodes
+1. If you don't already have an API Key, get your free API key from [Reka Platform](https://link.reka.ai/free).
+
+---
+
+## Dual Workflows - Async Processing
+
+This is composed of 2 **n8n** workflows:
+
+**Submit Reel Creation**: This workflow is triggered when a new video is published on a specific YouTube channel. It sends the video URL to Reka Clips API to create a short clip from the video.
 
 ![flow_create-clip-job](assets/flow_create-clip-job.png)
 
-2. **Check Reel Status**: This flow checks the status of the clip creation process. Once the clip is ready, it retrieves the clip URL and shares it.
+**Check Reel Status**: This workflow checks the status of the clip creation process. Once the clip is ready, it retrieves the clip URL and shares it.
 
 ![flow_check-status](assets/flow_check-status.png)
 
-## Setup
+### Installation: Data Table, Workflows
 
 - Create a Data table named `videos` with the following columns:
   - `video_title` (string)
   - `video_url` (string)
   - `job_id` (string)
   - `job_status` (string)
-- Import the two n8n workflows located in the `n8n` folder.
 
-![videos table](assets/table_videos.png)
+  ![videos table](assets/table_videos.png)
 
-### Flow: Submit Reel Creation
+### Workflow: Submit Reel Creation
 
+1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the `Submit Reel Creation.json` file located in the `n8n` folder.
 1. When New Video (trigger):
    - Change the `YouTube channel ID` of the Feed URL for the channel you want to monitor.
-2. Create Reel Creation Job:
+1. Create Reel Creation Job:
    - If you don't already have an API Key, get your free API key from [Reka Platform](https://link.reka.ai/free).
    - Add your `API Key` to the field **Bearer Token** in the Bearer Auth.
    - If needed, update the JSON parameters to customize the clip creation. By default it looks like this:
@@ -52,18 +69,20 @@ This is composed of 2 **n8n** flows:
    ```
 
    This will create one short vertical clip (9:16) up to 30 seconds long, with subtitles, using the "moments" template.
-3. Insert row:
+
+1. Insert row:
    - Make sure there is no error.
 
 After saving the workflow, activate it to start monitoring the YouTube channel for new videos.
 
 ### Flow: Check Reel status
 
+1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the `Check Reel status.json` file located in the `n8n` folder.
 1. Trigger:
    - By default the trigger is manual, I prefer this when testing. Once you are happy with your setup, change it to a time trigger to run periodically (e.g., every 15-30 minutes). Checking too frequently may lead to hitting rate limits.
-2. Get Job Status:
+1. Get Job Status:
    - Same as before, add your `API Key` to the field **Bearer Token** in the Bearer Auth.
-3. Append row in sheet:
+1. Append row in sheet:
    - Here I'm using Google Sheets to log the results, but you can use any other method to store or share the clip URL. (email, Slack, etc.) To use Google Sheets, make sure to set up the Google Sheets credentials in n8n.
    - Update the `Document`, `Sheet` and `Columns` fields to match your Google Sheets setup.
    ![Google sheet example](assets/sheet.png)

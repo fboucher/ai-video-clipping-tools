@@ -2,7 +2,7 @@
 
 # Auto-clip YouTube videos
 
-Each times there a new video on a specific YouTube channel, create a short clip from it using AI.
+Each times there a new video on a specific YouTube channel, create a short clip from it using AI. This repository contains two different approaches using **n8n** to automate the process of clipping YouTube videos using Reka Clips API.
 
 ## Single Workflows - Looping
 
@@ -12,8 +12,10 @@ This is composed of a single **n8n** workflows that gets trigger by new video pu
 
 ### Installation
 
-1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the `auto ai clip with http.json` file located in the `n8n` folder.
+1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the [auto-clip-with-http.json](n8n/auto-clip-with-http.json) file located in the `n8n` folder.
+
   ![import file](assets/import-file.png)
+
 1. Follow the instructions in the workflows to configure the nodes
 1. If you don't already have an API Key, get your free API key from [Reka Platform](https://link.reka.ai/free).
 
@@ -43,7 +45,7 @@ This is composed of 2 **n8n** workflows:
 
 ### Workflow: Submit Reel Creation
 
-1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the `Submit Reel Creation.json` file located in the `n8n` folder.
+1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the [Submit Reel Creation.json](n8n/Submit%20Reel%20Creation.json) file located in the `n8n` folder.
 1. When New Video (trigger):
    - Change the `YouTube channel ID` of the Feed URL for the channel you want to monitor.
 1. Create Reel Creation Job:
@@ -77,7 +79,7 @@ After saving the workflow, activate it to start monitoring the YouTube channel f
 
 ### Flow: Check Reel status
 
-1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the `Check Reel status.json` file located in the `n8n` folder.
+1. Create a new workflow in n8n. From the top right corner, select the hamburger menu (three dots) > import from File and select the [Check Reel status.json](n8n/Check%20Reel%20status.json) file located in the `n8n` folder.
 1. Trigger:
    - By default the trigger is manual, I prefer this when testing. Once you are happy with your setup, change it to a time trigger to run periodically (e.g., every 15-30 minutes). Checking too frequently may lead to hitting rate limits.
 1. Get Job Status:

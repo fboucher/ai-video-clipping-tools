@@ -8,13 +8,13 @@ This repository contains tools to automatically create short clips from YouTube 
 
 Each sample has a dedicated folder with all the necessary files and instructions to get started. Don't hesitate to open an issue, or ask for help in the [Reka Community Discord](https://link.reka.ai/discord) if you have any questions.
 
-### 1. n8n Workflows
+### [1. n8n Workflows](n8n/README.md)
 
-n8n is an integration and automation platform perfect for less technical users as it uses less code or even no code. Have a look at our templates to get clips generated automatically from YouTube videos. 👉 [All n8n details here](n8n/README.md)
+n8n is an integration and automation platform perfect for less technical users as it uses less code or even no code. Have a look at our templates to get clips generated automatically from YouTube videos. 👉 [All n8n details here](n8n/README.md) 👈
 
-### 2. Python Scripts
+### [2. Python Scripts](python/README.md)
 
-Simple Python scripts to generate clips from YouTube videos. Includes a clip generator with streaming progress output and a status checker for monitoring jobs. 👉 [All Python details here](python/README.md)
+Simple Python scripts to generate clips from YouTube videos. Includes a clip generator with streaming progress output and a status checker for monitoring jobs. 👉 [All Python details here](python/README.md) 👈
 
 ## Questions or issues
 

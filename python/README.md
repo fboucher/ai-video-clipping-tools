@@ -14,20 +14,27 @@ Simple Python scripts to create video clips using the Reka AI API.
 Creates a clip from a YouTube video.
 
 ```bash
-python clip_generator.py
+python3 clip_generator.py
 ```
 
+
 Enter the video URL when prompted. The script streams progress and shows the Job ID (save it if interrupted).
+
+**Sample Output:**
+
+![clip generator output](assets/clip_generator.png)
 
 ### check_status.py
 
 Check the status of a clip job using its Job ID.
 
 ```bash
-python check_status.py
+python3 check_status.py
 ```
 
 Enter the Job ID when prompted. Checks every 30 seconds until complete. Press `Ctrl+C` to stop.
+
+![Check status output](assets/check_status.png)
 
 ## Links
 

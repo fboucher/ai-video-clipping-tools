@@ -10,7 +10,7 @@ Each sample has a dedicated folder with all the necessary files and instructions
 
 ### [1. n8n Workflows](n8n/README.md)
 
-n8n is an integration and automation platform perfect for less technical users as it uses less code or even no code. Have a look at our templates to get clips generated automatically from YouTube videos. 👉 [All n8n details here](n8n/README.md) 👈
+n8n is an integration and automation platform perfect for less technical users as it uses less code or even no code. Explore our templates to get clips generated automatically from YouTube videos. 👉 [All n8n details here](n8n/README.md) 👈
 
 ### [2. Python Scripts](python/README.md)
 
@@ -22,11 +22,11 @@ Node.js scripts mirroring the Python functionality. Requires Node.js 18+ (uses n
 
 ### [4. C# Scripts](dotnet/README.md)
 
-C# file-based programs (single `.cs` files without project files). Requires .NET 9+. Includes a clip generator with streaming progress and a status checker. 👉 [All C# details here](dotnet/README.md) 👈
+C# file-based programs (single `.cs` files without project files). Requires .NET 10.0 or later. Includes a clip generator with streaming progress and a status checker. 👉 [All C# details here](dotnet/README.md) 👈
 
 ## Questions or issues
 
-If you have any questions or run into issues, feel free to open an issue. You can also join the [Reka Community Discord](https://link.reka.ai/discord) for support and discussions.
+If you have any questions or encounter issues, feel free to open an issue. You can also join the [Reka Community Discord](https://link.reka.ai/discord) for support and discussions.
 
 ## Documentation
 
